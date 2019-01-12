@@ -1,0 +1,144 @@
+TkinterTreectrl - ChangeLog
+
+################################################################################
+
+Nov. 29 2005: TkinterTreectrl-0.2
+
+This release fixes two typos in the dragimage_add(), resp.
+dragimage_configure() methods.
+
+################################################################################
+
+Mar. 16 2006: TkinterTreectrl-0.3
+
+Three library commands from FielListBindings.tcl have been added:
+set_dragimage(), set_editable() and set_sensitive().
+These may be used to make text cells user-editable and to add elements
+to the dragimage for dnd operations.
+
+################################################################################
+
+Mar. 28 2006: TkinterTreectrl-0.4
+
+A few bugs and some interface weirdnesses have been fixed:
+canvasx() and canvasy() now return integers as they should (not floats).
+The broken item_firstchild(), item_lastchild(), item_nextsibling() and
+item_prevsibling() have been fixed.
+item_children() now returns an empty tuple instead of None if the item in
+question does not have any children.
+A typo that stopped item_cget() from working was fixed.
+This release finally introduces a distutils installer script, so now you should
+be able to simply do:
+
+    python setup.py install
+
+to do a decent install.
+
+################################################################################
+
+Oct. 04 2006: TkinterTreectrl-0.5
+
+Converting the version number into a float sure does not work with
+Treectrl-2.1.1 (sigh!) , so I changed TreectrlVersion to be a string.
+
+################################################################################
+
+Nov. 30 2006: TkinterTreectrl-0.6
+
+The major change in this release is the introduction of a few new widget
+classes:
+MultiListbox is a Treectrl widget set up to work as a (more or less)
+full-featured and very flexible multi column listbox widget.
+The ScrolledTreectrl and ScrolledMultiListbox classes use ideas shamelessly
+stolen from Pmw.ScrolledListbox to add one or two static or automatic
+scrollbars to the widgets. They both inherit from the ScrolledWidget class that
+is supposed to make it easy to add scrollbars to any other Listbox or Canvas
+alike Tkinter widget.
+Changes to the Treectrl widget:
+I added the second (optional) last argument to column_delete(), which is
+new in treectrl-2.1.1 .
+A bug in item_sort() was fixed: it is now possible to use the command and mode
+options together, which may be useful if you want to use the same command in
+ncreasing and decreasing mode. To enable this, mode now defaults to None
+instead of ascii.
+CAUTION: this change may be backwards incompatible in some cases!
+It is also possible now to specify a sequence of strings as mode,
+like mode=("integer", "decreasing").
+The class variables TreectrlVersion, _last_element and _last_style were
+accidentally handled as instance variables, this has been fixed.
+
+################################################################################
+
+Jan. 22 2007: TkinterTreectrl-0.7
+
+Added new features from treectrl-2.2 :
+
+new methods:
+bbox(), column_tag_add(), column_tag_expr(), column_tag_names(),
+column_tag_remove(), item_tag_add(), item_tag_expr(), item_tag_names(),
+item_tag_remove(), item_descendants(), item_enabled().
+
+methods accepting new (optional) arguments:
+selection_get(), column_count(), item_count()
+
+Bug fixes:
+
+item_id() was broken if no matching item exists;
+item_dump() tried to convert textual strings into integers
+typo in constant LEFTMOST was fixed.
+
+Interface changes:
+
+item_id() now returns a tuple of matching ids instead of an integer;
+this is necessary, so the new feauture of multiple items matching the same tag
+can be used.
+CAUTION: this is backwards incompatible!
+
+################################################################################
+
+Nov. 10 2007: TkinterTreectrl-0.8
+
+added __version__ attribute to __init__.py ; "package require treectrl" was only
+called when creating the first treectrl widget which seemed to fail in some
+situations; now on every widget creation "package require treectrl" is called.
+
+################################################################################
+
+Aug. 08 2010: TkinterTreectrl-1.0
+
+MultiListbox.insert() now returns the item id of the newly created item;
+updated the documentation and the Treectrl class to reflect the changes and new
+features since treectrl-2.2 to treectrl-2.2.10;
+fixed a bug in Treectrl.selection_get() that caused a TypeError to be raised
+when selection_get() was called with "first" and/or "last" arguments and a
+single item was currently selected.
+
+################################################################################
+
+Nov. 20 2012: TkinterTreectrl-2.0
+
+Added new methods from treectrl-2.3 and updated docs;
+added Python-3 compatibility;
+ScrolledTreectrl now uses themed widgets if ttk is available;
+added Treectrl._getboolean() as a workaround for tkapp.getboolean(), to make
+sure that True/False are always returned as boolean values , not 1/0;
+fixed a bug in ScrolledWidget._scrollMode() that caused the Scrollbars not
+to be drawn when the scrollmode changed from "auto" to "x" or "y".
+
+################################################################################
+
+May 06 2013: TkinterTreectrl-2.0.1
+
+Fixed a bug in MultilistBox._configure_multilistbox() that prevented lists
+from being accepted as argument for the columns option (thanks to
+Василий Молостов)
+
+################################################################################
+
+Feb. 19 2018: TkinterTreectrl-2.0.2
+
+In newer versions of Python3 tkinter's internal _getints() function has been
+modified which stopped the Treectrl widget from working properly with Python3;
+as a workaround Treectrl._getints() was overridden with code from the Python2
+_getints function.
+

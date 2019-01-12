@@ -1,0 +1,156 @@
+
+<!doctype html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module MultiListbox</title>
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>MultiListbox</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href="./TkTreectrl.html">index</a><br><a href="file:./TkTreectrl/MultiListbox.py">./TkTreectrl/MultiListbox.py</a></font></td></tr></table>
+    <p><tt>A&nbsp;flexible&nbsp;multi&nbsp;column&nbsp;listbox&nbsp;widget&nbsp;for&nbsp;Tkinter.</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="TkTreectrl.Treectrl.html#Treectrl">TkTreectrl.Treectrl.Treectrl</a>(<a href="Tkinter.html#Widget">Tkinter.Widget</a>)
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="MultiListbox.html#MultiListbox">MultiListbox</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="MultiListbox">class <strong>MultiListbox</strong></a>(<a href="TkTreectrl.Treectrl.html#Treectrl">TkTreectrl.Treectrl.Treectrl</a>)</font></td></tr>
+
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt>A&nbsp;flexible&nbsp;multi&nbsp;column&nbsp;listbox&nbsp;widget&nbsp;for&nbsp;Tkinter.<br>
+Based&nbsp;on&nbsp;the&nbsp;<a href="TkTreectrl.Treectrl.html#Treectrl">Treectrl</a>&nbsp;widget,&nbsp;it&nbsp;offers&nbsp;the&nbsp;following&nbsp;additional<br>
+configuration&nbsp;options:<br>
+&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;columns&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;sequence&nbsp;of&nbsp;strings&nbsp;that&nbsp;defines&nbsp;the&nbsp;number&nbsp;of<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;columns&nbsp;of&nbsp;the&nbsp;widget.&nbsp;The&nbsp;strings&nbsp;will&nbsp;be&nbsp;used&nbsp;in<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;columnheader&nbsp;lines&nbsp;(default:&nbsp;('&nbsp;',)).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;command&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;an&nbsp;optional&nbsp;command&nbsp;that&nbsp;will&nbsp;be&nbsp;executed&nbsp;when&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;user&nbsp;double-clicks&nbsp;into&nbsp;the&nbsp;listbox&nbsp;or&nbsp;presses&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Return&nbsp;key.&nbsp;The&nbsp;listbox&nbsp;index&nbsp;of&nbsp;the&nbsp;item&nbsp;that&nbsp;was<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clicked&nbsp;on&nbsp;resp.&nbsp;of&nbsp;the&nbsp;currently&nbsp;active&nbsp;item&nbsp;is<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;passed&nbsp;as&nbsp;argument&nbsp;to&nbsp;the&nbsp;callback;&nbsp;if&nbsp;there&nbsp;is&nbsp;no<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;item&nbsp;at&nbsp;the&nbsp;event&nbsp;coordinates&nbsp;resp.&nbsp;no&nbsp;active&nbsp;item<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;exists,&nbsp;this&nbsp;index&nbsp;will&nbsp;be&nbsp;-1&nbsp;(default:&nbsp;None).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;expandcolumns&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a&nbsp;sequence&nbsp;of&nbsp;integers&nbsp;defining&nbsp;the&nbsp;columns&nbsp;that<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;should&nbsp;expand&nbsp;horizontally&nbsp;beyond&nbsp;the&nbsp;requested<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;size&nbsp;when&nbsp;the&nbsp;widget&nbsp;is&nbsp;resized&nbsp;(note&nbsp;that&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rightmost&nbsp;column&nbsp;will&nbsp;always&nbsp;expand)&nbsp;(default:&nbsp;()).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;selectcmd&nbsp;-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;an&nbsp;optional&nbsp;callback&nbsp;that&nbsp;will&nbsp;be&nbsp;executed&nbsp;when&nbsp;the<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;selection&nbsp;of&nbsp;the&nbsp;listbox&nbsp;changes.&nbsp;A&nbsp;tuple<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;containing&nbsp;the&nbsp;indices&nbsp;of&nbsp;the&nbsp;currently&nbsp;selected<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;as&nbsp;returned&nbsp;by&nbsp;<a href="#MultiListbox-curselection">curselection</a>()&nbsp;will&nbsp;be&nbsp;passed<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;the&nbsp;callback&nbsp;(default:&nbsp;None).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;selectbackground&nbsp;-&nbsp;&nbsp;the&nbsp;background&nbsp;color&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;selection<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;rectangle&nbsp;(default:&nbsp;#00008B).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;selectforeground&nbsp;-&nbsp;&nbsp;the&nbsp;foreground&nbsp;color&nbsp;to&nbsp;use&nbsp;for&nbsp;selected&nbsp;text<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(default:&nbsp;white).<br>
+&nbsp;<br>
+By&nbsp;default,&nbsp;the&nbsp;widget&nbsp;uses&nbsp;one&nbsp;pre-defined&nbsp;style&nbsp;for&nbsp;all&nbsp;columns;&nbsp;the<br>
+widget's&nbsp;<a href="#MultiListbox-style">style</a>()&nbsp;method&nbsp;allows&nbsp;to&nbsp;access&nbsp;and&nbsp;configure&nbsp;the&nbsp;default&nbsp;style,<br>
+as&nbsp;well&nbsp;as&nbsp;applying&nbsp;new&nbsp;user-defined&nbsp;styles&nbsp;per&nbsp;column.<br>
+The&nbsp;default&nbsp;style&nbsp;defines&nbsp;two&nbsp;elements,&nbsp;"text"&nbsp;and&nbsp;"select"&nbsp;(which<br>
+describes&nbsp;attributes&nbsp;of&nbsp;the&nbsp;selection&nbsp;rectangle);&nbsp;these&nbsp;may&nbsp;be&nbsp;accessed<br>
+and&nbsp;configured&nbsp;with&nbsp;the&nbsp;<a href="#MultiListbox-element">element</a>()&nbsp;method.&nbsp;Conversion&nbsp;between&nbsp;listbox<br>
+indices&nbsp;and&nbsp;treectrl&nbsp;item&nbsp;descriptors&nbsp;can&nbsp;be&nbsp;done&nbsp;with&nbsp;the&nbsp;<a href="#MultiListbox-item">item</a>()&nbsp;and<br>
+<a href="#MultiListbox-index">index</a>()&nbsp;widget&nbsp;methods.&nbsp;Besides&nbsp;this,&nbsp;most&nbsp;common&nbsp;operations&nbsp;can&nbsp;be&nbsp;done<br>
+with&nbsp;methods&nbsp;identical&nbsp;or&nbsp;very&nbsp;similar&nbsp;to&nbsp;those&nbsp;of&nbsp;a&nbsp;Tkinter.Listbox,&nbsp;with<br>
+the&nbsp;exception&nbsp;of&nbsp;the&nbsp;selection_xxx()&nbsp;methods,&nbsp;where&nbsp;the&nbsp;treectrl&nbsp;methods<br>
+are&nbsp;kept&nbsp;intact;&nbsp;for&nbsp;Tkinter.Listbox&nbsp;alike&nbsp;methods,&nbsp;use&nbsp;select_xxx().<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="MultiListbox-__getitem__"><strong>__getitem__</strong></a> = <a href="#MultiListbox-cget">cget</a>(self, key)</dt></dl>
+
+<dl><dt><a name="MultiListbox-__init__"><strong>__init__</strong></a>(self, master<font color="#909090">=None</font>, columns<font color="#909090">=(' ',)</font>, selectcmd<font color="#909090">=None</font>, command<font color="#909090">=None</font>, expandcolumns<font color="#909090">=()</font>, showroot<font color="#909090">=False</font>, selectforeground<font color="#909090">='white'</font>, selectbackground<font color="#909090">='#00008B'</font>, **kw)</dt></dl>
+
+<dl><dt><a name="MultiListbox-activate"><strong>activate</strong></a>(self, index)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-activate">activate</a>().&nbsp;Note&nbsp;that&nbsp;this&nbsp;overrides&nbsp;the<br>
+<a href="#MultiListbox-activate">activate</a>()&nbsp;method&nbsp;inherited&nbsp;from&nbsp;<a href="TkTreectrl.Treectrl.html#Treectrl">Treectrl</a>.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-bbox"><strong>bbox</strong></a>(self, index, column<font color="#909090">=None</font>, element<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;<a href="#MultiListbox-item_bbox">item_bbox</a>(),&nbsp;except&nbsp;that&nbsp;it&nbsp;requires&nbsp;a&nbsp;listbox&nbsp;index&nbsp;instead<br>
+of&nbsp;a&nbsp;treectrl&nbsp;item&nbsp;descriptor&nbsp;as&nbsp;argument.&nbsp;Note&nbsp;that&nbsp;this&nbsp;overrides&nbsp;the<br>
+<a href="#MultiListbox-bbox">bbox</a>()&nbsp;method&nbsp;inherited&nbsp;from&nbsp;<a href="TkTreectrl.Treectrl.html#Treectrl">Treectrl</a>.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-cget"><strong>cget</strong></a>(self, key)</dt></dl>
+
+<dl><dt><a name="MultiListbox-column"><strong>column</strong></a>(self, index)</dt><dd><tt>Return&nbsp;the&nbsp;column&nbsp;identifier&nbsp;for&nbsp;the&nbsp;column&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-config"><strong>config</strong></a> = <a href="#MultiListbox-configure">configure</a>(self, cnf<font color="#909090">=None</font>, **kw)</dt></dl>
+
+<dl><dt><a name="MultiListbox-configure"><strong>configure</strong></a>(self, cnf<font color="#909090">=None</font>, **kw)</dt></dl>
+
+<dl><dt><a name="MultiListbox-curselection"><strong>curselection</strong></a>(self)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-curselection">curselection</a>().</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-delete"><strong>delete</strong></a>(self, first, last<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-delete">delete</a>()&nbsp;except&nbsp;that&nbsp;an&nbsp;additional&nbsp;index<br>
+descriptor&nbsp;ALL&nbsp;may&nbsp;be&nbsp;used,&nbsp;so&nbsp;that&nbsp;<a href="#MultiListbox-delete">delete</a>(ALL)&nbsp;is&nbsp;equivalent&nbsp;with<br>
+<a href="#MultiListbox-delete">delete</a>(0,&nbsp;END).</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-element"><strong>element</strong></a>(self, element)</dt><dd><tt>Return&nbsp;the&nbsp;treectrl&nbsp;element&nbsp;corresponding&nbsp;to&nbsp;ELEMENT.<br>
+ELEMENT&nbsp;may&nbsp;be&nbsp;"text"&nbsp;or&nbsp;"select".</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-get"><strong>get</strong></a>(self, first, last<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-get">get</a>(),&nbsp;except&nbsp;that&nbsp;each&nbsp;element&nbsp;of&nbsp;the&nbsp;returned<br>
+tuple&nbsp;is&nbsp;a&nbsp;tuple&nbsp;instead&nbsp;of&nbsp;a&nbsp;string;&nbsp;each&nbsp;of&nbsp;these&nbsp;tuples&nbsp;contains&nbsp;the<br>
+text&nbsp;strings&nbsp;per&nbsp;column&nbsp;of&nbsp;a&nbsp;listbox&nbsp;item.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-index"><strong>index</strong></a>(self, which<font color="#909090">=None</font>, item<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-index">index</a>(),&nbsp;except&nbsp;that&nbsp;if&nbsp;ITEM&nbsp;is&nbsp;specified,&nbsp;the<br>
+listbox&nbsp;index&nbsp;for&nbsp;the&nbsp;treectrl&nbsp;item&nbsp;descriptor&nbsp;ITEM&nbsp;is&nbsp;returned.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-insert"><strong>insert</strong></a>(self, index, *args)</dt><dd><tt>Similar&nbsp;to&nbsp;Tkinter.Listbox.<a href="#MultiListbox-insert">insert</a>(),&nbsp;except&nbsp;that&nbsp;instead&nbsp;of&nbsp;one<br>
+string&nbsp;a&nbsp;number&nbsp;of&nbsp;strings&nbsp;equal&nbsp;to&nbsp;the&nbsp;number&nbsp;of&nbsp;columns&nbsp;must&nbsp;be&nbsp;given<br>
+as&nbsp;arguments.&nbsp;It&nbsp;is&nbsp;an&nbsp;error&nbsp;to&nbsp;specify&nbsp;more&nbsp;or&nbsp;fewer&nbsp;arguments&nbsp;than<br>
+the&nbsp;number&nbsp;of&nbsp;columns.&nbsp;Returns&nbsp;the&nbsp;ID&nbsp;of&nbsp;the&nbsp;newly&nbsp;created&nbsp;item,&nbsp;as<br>
+returned&nbsp;by&nbsp;<a href="#MultiListbox-item_create">item_create</a>().</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-item"><strong>item</strong></a>(self, index)</dt><dd><tt>Return&nbsp;the&nbsp;treectrl&nbsp;item&nbsp;descriptor&nbsp;for&nbsp;the&nbsp;item&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-keys"><strong>keys</strong></a>(self)</dt></dl>
+
+<dl><dt><a name="MultiListbox-nearest"><strong>nearest</strong></a>(self, y)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-nearest">nearest</a>().</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-numcolumns"><strong>numcolumns</strong></a>(self)</dt><dd><tt>Return&nbsp;the&nbsp;number&nbsp;of&nbsp;listbox&nbsp;columns.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-see"><strong>see</strong></a>(self, index, column<font color="#909090">=None</font>, center<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-see">see</a>().&nbsp;Note&nbsp;that&nbsp;this&nbsp;overrides&nbsp;the<br>
+<a href="#MultiListbox-see">see</a>()&nbsp;method&nbsp;inherited&nbsp;from&nbsp;<a href="TkTreectrl.Treectrl.html#Treectrl">Treectrl</a>.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-select_anchor"><strong>select_anchor</strong></a>(self, index<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-select_anchor">select_anchor</a>(),&nbsp;except&nbsp;that&nbsp;it&nbsp;if&nbsp;no&nbsp;INDEX&nbsp;is<br>
+specified&nbsp;the&nbsp;current&nbsp;selection&nbsp;anchor&nbsp;will&nbsp;be&nbsp;returned.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-select_clear"><strong>select_clear</strong></a>(self, first<font color="#909090">=None</font>, last<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-select_clear">select_clear</a>(),&nbsp;except&nbsp;that&nbsp;if&nbsp;no&nbsp;arguments&nbsp;are<br>
+specified,&nbsp;all&nbsp;items&nbsp;will&nbsp;be&nbsp;deleted,&nbsp;so&nbsp;that&nbsp;<a href="#MultiListbox-select_clear">select_clear</a>()&nbsp;is<br>
+equivalent&nbsp;with&nbsp;<a href="#MultiListbox-select_clear">select_clear</a>(0,&nbsp;END).</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-select_includes"><strong>select_includes</strong></a>(self, index)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-select_includes">select_includes</a>().</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-select_set"><strong>select_set</strong></a>(self, first, last<font color="#909090">=None</font>)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-select_set">select_set</a>().</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-size"><strong>size</strong></a>(self)</dt><dd><tt>Like&nbsp;Tkinter.Listbox.<a href="#MultiListbox-size">size</a>().</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-sort"><strong>sort</strong></a>(self, column<font color="#909090">=None</font>, element<font color="#909090">=None</font>, first<font color="#909090">=None</font>, last<font color="#909090">=None</font>, mode<font color="#909090">=None</font>, command<font color="#909090">=None</font>, notreally<font color="#909090">=False</font>)</dt><dd><tt>Like&nbsp;<a href="#MultiListbox-item_sort">item_sort</a>(),&nbsp;except&nbsp;that&nbsp;the&nbsp;item&nbsp;descriptor&nbsp;defaults&nbsp;to&nbsp;ROOT<br>
+(which&nbsp;is&nbsp;most&nbsp;likely&nbsp;wanted)&nbsp;and&nbsp;that&nbsp;the&nbsp;FIRST&nbsp;and&nbsp;LAST&nbsp;options<br>
+require&nbsp;listbox&nbsp;indices&nbsp;instead&nbsp;of&nbsp;treectrl&nbsp;item&nbsp;descriptors.</tt></dd></dl>
+
+<dl><dt><a name="MultiListbox-style"><strong>style</strong></a>(self, index, newstyle<font color="#909090">=None</font>)</dt><dd><tt>If&nbsp;NEWSTYLE&nbsp;is&nbsp;specified,&nbsp;set&nbsp;the&nbsp;style&nbsp;for&nbsp;the&nbsp;column&nbsp;at&nbsp;INDEX&nbsp;to<br>
+NEWSTYLE.&nbsp;Return&nbsp;the&nbsp;style&nbsp;identifier&nbsp;for&nbsp;the&nbsp;column&nbsp;at&nbsp;INDEX.</tt></dd></dl>
+
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#55aa55">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Data</strong></big></font></td></tr>
+
+<tr><td bgcolor="#55aa55"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><strong>__package__</strong> = None</td></tr></table>
+</body></html>

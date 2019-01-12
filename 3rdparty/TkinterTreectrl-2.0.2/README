@@ -1,0 +1,27 @@
+TkinterTreectrl - README
+
+Python wrapper package for the Tktreectrl Tk extension library
+( http://tktreectrl.sourceforge.net ).
+
+To install TkinterTreectrl, run:
+
+    python setup.py install
+
+or, in case you have multiple version of Python installed, run (for example):
+
+    python2.6 setup.py install
+
+to install into Python-2.6 .
+
+Alternatively you can manually copy the TkTreectrl folder into Python's
+site-packages folder, usually /usr/lib/python2.x/site-packages on unix
+or C:\Python2x\Lib\site-packages on windows platforms.
+
+
+License:
+
+The TkinterTreectrl package is released in the Public domain.
+
+Contact:
+
+Michael Lange <klappnase@users.sf.net>
